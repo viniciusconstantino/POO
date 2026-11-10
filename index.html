@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sistema Escolar</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="Aluno.js" defer></script>
+  <script src="Turma.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <h1>Sistema Escolar</h1>
+
+  <!-- BOTÕES DO MENU -->
+  <div class="tabs-container">
+
+    <button onclick="mostrarTurmas()">
+      Cadastrar Turma
+    </button>
+
+    <button onclick="mostrarCadastroAluno()">
+      Cadastrar Aluno
+    </button>
+
+    <button onclick="listarAlunos()">
+      Listar Alunos
+    </button>
+
+  </div>
+
+
+  <!-- CADASTRO DE TURMAS -->
+  <div id="tab-turmas">
+
+    <h2>Cadastrar Turma</h2>
+
+    <form onsubmit="salvarTurma(); return false;">
+
+      <label>Nome da Turma:</label>
+      <input type="text" id="turma-nome" required>
+
+      <label>Nome do Curso:</label>
+      <input type="text" id="turma-curso" required>
+
+      <label>Professor:</label>
+      <input type="text" id="turma-professor" required>
+
+      <button type="submit">
+        Salvar Turma
+      </button>
+
+    </form>
+
+    <h3>Turmas Cadastradas</h3>
+
+    <div id="lista-turmas">
+      Nenhuma turma cadastrada.
+    </div>
+
+  </div>
+
+
+  <!-- CADASTRO DE ALUNOS -->
+  <div id="tab-cadastrar" style="display: none;">
+
+    <h2>Cadastrar Aluno</h2>
+
+    <label>Nome do Aluno:</label>
+    <input type="text" id="nome">
+
+    <label>Turma:</label>
+    <select id="turma-aluno">
+      <option value="">Selecione uma turma</option>
+    </select>
+
+    <label>Nota 1:</label>
+    <input type="number" id="n1" min="0" max="10" step="0.01">
+
+    <label>Nota 2:</label>
+    <input type="number" id="n2" min="0" max="10" step="0.01">
+
+    <label>Nota 3:</label>
+    <input type="number" id="n3" min="0" max="10" step="0.01">
+
+    <button onclick="salvarAluno()">
+      Salvar Aluno
+    </button>
+
+  </div>
+
+
+  <!-- LISTAGEM DE ALUNOS -->
+  <div id="tab-listar" style="display: none;">
+
+    <h2>Alunos Cadastrados</h2>
+
+    <div id="alunos">
+      Nenhum aluno cadastrado.
+    </div>
+
+  </div>
+
+</body>
+</html>
